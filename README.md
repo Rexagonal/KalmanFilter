@@ -1,6 +1,8 @@
 # KalmanFilter
 Swift implementation of Conventional Kalman Filter algorithm
 
+> This fork has been modified for use with Swift Package Manager... TBC
+
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Build Status](https://travis-ci.org/wearereasonablepeople/KalmanFilter.svg?branch=master)](https://travis-ci.org/wearereasonablepeople/KalmanFilter)
 [![codecov](https://codecov.io/gh/wearereasonablepeople/KalmanFilter/branch/master/graph/badge.svg)](https://codecov.io/gh/wearereasonablepeople/KalmanFilter)

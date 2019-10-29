@@ -133,7 +133,22 @@ public struct Matrix: Equatable {
 // MARK: - Equatable
 
 public func == (lhs: Matrix, rhs: Matrix) -> Bool {
-    return lhs.rows == rhs.rows && lhs.columns == rhs.columns && lhs.grid == rhs.grid
+    if lhs.grid.count != rhs.grid.count {
+        return false
+    }
+    
+    // Allows for variations to occur with double values at high resolutions
+    // TODO: This does not necessarily take into account perturbations that might be introduced,
+    // and string conversion seems like a heavy-handed approach - needs discussion?
+    var gridEquals = true
+    for i in 0 ..< lhs.grid.count {
+        let left = String(format: "%.12f", lhs.grid[i])
+        let right = String(format:"%.12f", rhs.grid[i])
+        
+        gridEquals = gridEquals && (left == right)
+    }
+    
+    return lhs.rows == rhs.rows && lhs.columns == rhs.columns && gridEquals
 }
 
 // MARK: -  Matrix as KalmanInput
